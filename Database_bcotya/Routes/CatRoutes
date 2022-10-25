@@ -8,8 +8,15 @@ router.post("/createCat", (req, res, next) => {
         .catch(err => next(err));
 });
 
-router.get("/getAll", (req, res, next) => {
+router.get("/getAll", (req, res) => {
     return catModel.find({})
+        .then(result => res.send(result))
+        .catch(err => res.status(404).send('No Cats Found'));
+
+});
+
+router.get("/get/:id", (req, res, next) => {
+    catModel.findById(req.params.id)
         .then(result => res.send(result))
         .catch(err => next(err));
 
