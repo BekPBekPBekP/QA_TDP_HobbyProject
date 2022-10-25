@@ -1,0 +1,35 @@
+const { catModel } = require("../CatSchema")
+
+const router = require("express").Router();
+
+router.post("/createCat", (req, res, next) => {
+    catModel.create(req.body)
+        .then(result => res.status(201).send(result))
+        .catch(err => next(err));
+});
+
+router.get("/getAll", (req, res, next) => {
+    return catModel.find({})
+        .then(result => res.send(result))
+        .catch(err => next(err));
+
+});
+
+router.delete("/delete/:id", (req, res, next) => {
+    const { id } = req.params;
+    console.log(id);
+    catModel.findByIdAndDelete(id)
+        .then(result => res.send(result))
+        .catch(err => next(err));
+});
+
+
+router.patch('/replace/:id', (req, res, next) => {
+    const { id } = req.params;
+    const newCat = req.body;
+    catModel.findByIdAndUpdate(id, newCat, next)
+        .then(result => res.send(newCat))
+        .catch(err => next(err));
+});
+
+module.exports = router;
