@@ -2,6 +2,10 @@ const express = require("express");
 
 const app = express();
 
+const cors = requre("cors");
+
+app.use(cors());
+
 const bodyParser = require("body-parser")
 
 const catRoutes = require("./Routes/CatRoutes");
@@ -15,3 +19,5 @@ app.use((err, req, res, next) => {
 })
 
 const server = app.listen(3011, () => console.log("Successfully started on port", server.address().port));
+
+module.exports = server;
