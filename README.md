@@ -1,1 +1,0 @@
-# QA_TDP_HobbyProject
