@@ -1,6 +1,5 @@
 import axios from "axios";
 import { useState, useEffect } from "react";
-import PropTypes from "prop-types";
 
 function CreateCat() {
     const [name, setName] = useState("");
@@ -49,13 +48,5 @@ function CreateCat() {
     );
 
 }
-
-CreateCat.propTypes = {
-    name: PropTypes.string.isRequired,
-    age: PropTypes.number.isRequired,
-    breed: PropTypes.string.isRequired,
-    nomination: PropTypes.string.isRequired,
-    owner: PropTypes.string.isRequired
-};
 
 export default CreateCat;
