@@ -7,12 +7,11 @@ function CreateCat() {
     const [age, setAge] = useState("");
     const [breed, setBreed] = useState("");
     const [nomination, setNomination] = useState("");
-    const [owner, setOwner] = useState("");
 
 
     const submitForm = async (event) => {
         event.preventDefault();
-        const res = await axios.post("http://localhost:3011/bcotya/createCat", { name, age, breed, nomination, owner, });
+        const res = await axios.post("http://localhost:3011/bcotya/createCat", { name, age, breed, nomination, });
 
         console.log("Successfully created nomination", res.data);
 
