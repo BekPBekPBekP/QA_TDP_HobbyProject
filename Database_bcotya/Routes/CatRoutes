@@ -34,8 +34,9 @@ router.delete("/delete/:id", (req, res, next) => {
 router.patch('/replace/:id', (req, res, next) => {
     const { id } = req.params;
     const newCat = req.body;
-    catModel.findByIdAndUpdate(id, newCat, next)
-        .then(result => res.send(newCat))
+    console.log("NEW CAT:", newCat);
+    catModel.findByIdAndUpdate(id, newCat)
+        .then(result => res.send(result))
         .catch(err => next(err));
 });
 
