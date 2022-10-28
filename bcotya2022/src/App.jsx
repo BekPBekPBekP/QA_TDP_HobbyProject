@@ -1,5 +1,7 @@
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
+import Son from './Son.jpg';
+import Monty from './Monty.jpg';
 import { BrowserRouter as Router, Link, Route, Routes, } from "react-router-dom";
 import CreateCat from "./Components/CreateCat"
 import DeleteCat from "./Components/DeleteCats"
@@ -18,6 +20,11 @@ function App() {
 
         <h2> Best Cat Of The Year Award 2022 </h2>
         <h4> Nomination Form </h4>
+        <br />
+        <br />
+        <img src={Son} height={200} width={300}/><img src={Monty} height={300} width={250}/>
+        <br />
+        <br />
 
         <Link className='create' to="/bcotya/createCat">
           Nominate your Cat
@@ -27,6 +34,8 @@ function App() {
         <Link className='read' to="/bcotya/getAll">
           Edit your Details
         </Link>
+        <br />
+        <br />
 
 
         <Routes>
