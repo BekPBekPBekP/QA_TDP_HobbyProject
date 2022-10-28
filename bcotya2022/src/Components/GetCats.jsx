@@ -1,6 +1,5 @@
 import axios from "axios";
 import { useState, useEffect } from "react";
-import PropTypes from "prop-types";
 import handleUpdate from "./UpdateCats";
 import { Navigate, useNavigate } from "react-router-dom";
 
