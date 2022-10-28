@@ -31,6 +31,7 @@ function App() {
 
         <Routes>
           <Route path="/bcotya/createCat" element={<CreateCat />} />
+          <Route path="/bcotya/updateCat" element={<UpdateCat currentCat={currentCat} />} />
           <Route path="/bcotya/getAll" element={<GetCat setCurrentCat={setCurrentCat} />} />
 
 
